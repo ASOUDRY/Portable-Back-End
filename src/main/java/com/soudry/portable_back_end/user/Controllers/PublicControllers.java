@@ -1,4 +1,4 @@
-package com.soudry.portable_back_end.Controllers;
+package com.soudry.portable_back_end.user.Controllers;
 import java.time.Instant;
 
 import org.springframework.http.HttpStatus;
@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soudry.portable_back_end.dto.loginDto;
-import com.soudry.portable_back_end.dto.registerDto;
-import com.soudry.portable_back_end.entities.Users;
-import com.soudry.portable_back_end.repo.UserRepo;
+import com.soudry.portable_back_end.user.dto.loginDto;
+import com.soudry.portable_back_end.user.dto.registerDto;
+import com.soudry.portable_back_end.user.entities.Users;
+import com.soudry.portable_back_end.user.repo.UserRepo;
 
 @RestController
 @RequestMapping("/public")

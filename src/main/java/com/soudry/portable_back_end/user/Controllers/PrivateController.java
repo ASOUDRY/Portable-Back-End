@@ -1,4 +1,4 @@
-package com.soudry.portable_back_end.Controllers;
+package com.soudry.portable_back_end.user.Controllers;
 
 // import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.soudry.portable_back_end.entities;
+package com.soudry.portable_back_end.user.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import com.fasterxml.uuid.Generators;

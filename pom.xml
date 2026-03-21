@@ -61,8 +61,15 @@
             <version>5.2.0</version>
             <scope>compile</scope>
         </dependency>
-     </dependencies>
 
+        <!-- Source: https://mvnrepository.com/artifact/org.springframework.modulith/spring-modulith-api -->
+<dependency>
+    <groupId>org.springframework.modulith</groupId>
+    <artifactId>spring-modulith-api</artifactId>
+    <version>2.1.0-M3</version>
+    <scope>compile</scope>
+</dependency>
+     </dependencies>
     <build>
         <plugins>
             <plugin>

@@ -1,4 +1,4 @@
-package com.soudry.portable_back_end.config;
+package com.soudry.portable_back_end.user.config;
 
 import javax.crypto.SecretKey;
 
