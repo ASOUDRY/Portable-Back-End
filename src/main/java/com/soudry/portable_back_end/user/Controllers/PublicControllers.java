@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.soudry.portable_back_end.user.Services.FreeService;
 import com.soudry.portable_back_end.user.dto.loginDto;
 import com.soudry.portable_back_end.user.dto.registerDto;
 import com.soudry.portable_back_end.user.entities.Users;
@@ -33,22 +34,26 @@ public class PublicControllers {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtEncoder jwtEncoder;
+    private final FreeService freeService;
 
     public PublicControllers(
         UserRepo userRepo, 
         PasswordEncoder passwordEncoder,
         AuthenticationManager authenticationManager,
-        JwtEncoder jwtEncoder
+        JwtEncoder jwtEncoder,
+        FreeService freeService
     ) {
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.jwtEncoder = jwtEncoder;
+        this.freeService = freeService;
     }
 
     @GetMapping("/free")
     public ResponseEntity<String> free() {
-        return ResponseEntity.status(HttpStatus.OK).body("Can you see this");
+        String message = freeService.call();
+        return ResponseEntity.status(HttpStatus.OK).body(message);
     }
 
     @PostMapping("/register")
