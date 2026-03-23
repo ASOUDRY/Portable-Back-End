@@ -1,4 +1,4 @@
-package com.soudry.portable_back_end.user.entities;
+package com.soudry.portable_back_end.user.repo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import com.fasterxml.uuid.Generators;
@@ -13,7 +13,6 @@ public class Users {
     private String email;
     private String role;
 
-    // for reflection
     public Users() { }
 
     public Users(String name, String password, String role, String email) {
