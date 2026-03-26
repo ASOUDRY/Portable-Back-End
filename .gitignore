@@ -33,3 +33,4 @@ build/
 .vscode/
 /src/main/resources/secret.properties
 app.log
+app.log.2026-03-24.0.gz
