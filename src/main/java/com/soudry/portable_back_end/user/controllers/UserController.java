@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.soudry.portable_back_end.user.registerLogic.RegisterService;
 import com.soudry.portable_back_end.user.loginLogic.LoginDto;
 import com.soudry.portable_back_end.user.loginLogic.LoginService;
+import com.soudry.portable_back_end.user.loginLogic.authorizedDto;
 import com.soudry.portable_back_end.user.registerLogic.RegisterDto;
 
 
@@ -37,9 +38,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto dto) {
-        String token = loginService.login(dto);
-        return ResponseEntity.ok(token);
+    public ResponseEntity<authorizedDto> login(@RequestBody LoginDto dto) {
+        authorizedDto returnDto = loginService.login(dto);
+        return ResponseEntity.ok(returnDto);
     }
   
 }

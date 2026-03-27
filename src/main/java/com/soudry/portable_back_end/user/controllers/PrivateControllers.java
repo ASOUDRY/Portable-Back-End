@@ -5,50 +5,39 @@ import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.soudry.portable_back_end.user.privateLogic.PrivateService;
 import com.soudry.portable_back_end.user.repo.UserRepo;
 import com.soudry.portable_back_end.user.repo.Users;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/private")
 public class PrivateControllers {
-
     private final UserRepo userRepo;
-
-    public PrivateControllers(UserRepo userRepo) {
-        this.userRepo = userRepo;
+    private final PrivateService privateService;
+    public PrivateControllers(UserRepo userRepo, PrivateService privateService) {
+        this.userRepo = userRepo; 
+        this.privateService = privateService;
     }
 
     // UPDATE user
-    @PutMapping("/users/{name}")
-    public ResponseEntity<Users> updateUser(@PathVariable String name, @RequestBody Users updatedUser) {
-
-        Optional<Users> existingUser = userRepo.findByName(name);
-
+    @PatchMapping("/users/{id}")
+    public ResponseEntity<Users> updateUser(@PathVariable String id, @RequestBody Users user) {
+        Optional<Users> existingUser = userRepo.findById(id);
         if (existingUser.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-
-        Users user = existingUser.get();
-
-        // update fields (adjust based on your entity)
-        user.setName(updatedUser.getName());
-        user.setPassword(updatedUser.getPassword());
-
-        Users savedUser = userRepo.save(user);
-
-        return ResponseEntity.ok(savedUser);
+        var updatedUser = privateService.updateUser(existingUser.get(), user);
+        return ResponseEntity.ok(updatedUser);
     }
 
     // DELETE user
     @DeleteMapping("/users/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-
+    public ResponseEntity<Void> deleteUser(@PathVariable String id) {
         if (!userRepo.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
-
         userRepo.deleteById(id);
-
         return ResponseEntity.noContent().build();
     }
 }
