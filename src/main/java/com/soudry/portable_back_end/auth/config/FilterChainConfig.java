@@ -1,4 +1,4 @@
-package com.soudry.portable_back_end.auth;
+package com.soudry.portable_back_end.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

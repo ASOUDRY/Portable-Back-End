@@ -3,6 +3,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.stereotype.Component;
 import com.soudry.portable_back_end.jwt.services.JwtServices;
+import com.soudry.portable_back_end.user.repo.Users;
 @Component
 public class JwtFacade {
 
@@ -15,10 +16,14 @@ public class JwtFacade {
     }
 
     public String retreiveJwt(Authentication authentication) {
-        return jwtServices.generateJwt(authentication);
+        return jwtServices.generateJwt(authentication.getName(), authentication.getAuthorities().iterator().next().getAuthority());
     }
 
     public JwtAuthenticationConverter getJwtAuthenticationConverter() {
         return jwtAuthenticationConverter;
+    }
+
+    public String refreshJwt(Users user){
+        return jwtServices.generateJwt(user.getName(), user.getRole());
     }
 }
