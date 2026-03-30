@@ -7,43 +7,49 @@ import org.springframework.security.oauth2.jwt.JwsHeader;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.stereotype.Service;
-// import org.springframework.security.core.Authentication;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import java.util.List;
 
 @Service
 public class JwtServices {
 
-    private JwtEncoder jwtEncoder;
-    public JwtServices(JwtEncoder jwtEncoder) {
+    private final JwtEncoder jwtEncoder;
+    private final JwtAuthenticationConverter jwtAuthenticationConverter;
+
+    public JwtServices(JwtEncoder jwtEncoder,
+                       JwtAuthenticationConverter jwtAuthenticationConverter) {
         this.jwtEncoder = jwtEncoder;
+        this.jwtAuthenticationConverter = jwtAuthenticationConverter;
     }
-    //  public String generateJwt(Authentication authentication) {
-    //     Instant now = Instant.now();
 
-    //     JwtClaimsSet claims = JwtClaimsSet.builder()
-    //         .subject(authentication.getName())
-    //         .issuedAt(now)
-    //         .expiresAt(now.plusSeconds(3600))
-    //         .claim("scope", "ROLE_USER")
-    //         .build();
+    public JwtAuthenticationConverter getJwtAuthenticationConverter() {
+        return jwtAuthenticationConverter;
+    }
 
-    //     JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();
+    public String generateJwt(Authentication authentication) {
+        String role = authentication.getAuthorities()
+                .stream()
+                .findFirst()
+                .map(GrantedAuthority::getAuthority)
+                .orElseThrow()
+                .replace("ROLE_", ""); // prevent double prefix
+        return generateJwt(authentication.getName(), role);
+    }
 
-    //     return jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
-    // }
+    public String generateJwt(String username, String role) {
+        Instant now = Instant.now();
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .subject(username)
+                .issuedAt(now)
+                .expiresAt(now.plusSeconds(3600))
+                .claim("scope", List.of("ROLE_" + role))
+                .build();
 
-    public String generateJwt(String userId, String role) {
-    Instant now = Instant.now();
-
-    JwtClaimsSet claims = JwtClaimsSet.builder()
-        .subject(userId)
-        .issuedAt(now)
-        .expiresAt(now.plusSeconds(3600))
-        .claim("scope", role)
-        .build();
-
-    JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();
-
-    return jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
-}
+        JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();
+        return jwtEncoder.encode(JwtEncoderParameters.from(header, claims))
+                .getTokenValue();
+    }
 }
