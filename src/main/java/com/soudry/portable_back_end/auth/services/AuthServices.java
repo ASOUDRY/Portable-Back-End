@@ -47,7 +47,7 @@ public class AuthServices {
         RefreshToken token = tokenOpt.get();
         Users user = token.getUser();
         String rotatedToken = rotateToken(token.getId(), user);
-        String accessToken = jwtServices.generateJwt(user.getName(), user.getRole().name());
+        String accessToken = jwtServices.generateJwt(user.getName(), user.getRole().name(), user.getId());
         return Optional.of(new AccessRefreshTokens(accessToken, rotatedToken));
     }
 

@@ -13,10 +13,10 @@
     </parent>
 
     <groupId>com.soudry</groupId>
-    <artifactId>portable-back-end</artifactId>
+    <artifactId>AuthCore</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>portable-back-end</name>
-    <description>Login service API</description>
+    <name>AuthCore</name>
+    <description>AuthCore is a modular Spring Boot backend built around secure, stateless authentication.</description>
 
     <properties>
         <java.version>25</java.version>
