@@ -7,28 +7,55 @@ import org.springframework.security.oauth2.jwt.JwsHeader;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import java.util.List;
+import com.soudry.portable_back_end.auth.services.UserDetailsWithId;
 
 @Service
 public class JwtServices {
 
-    private JwtEncoder jwtEncoder;
-    public JwtServices(JwtEncoder jwtEncoder) {
-        this.jwtEncoder = jwtEncoder;
-    }
-     public String generateJwt(Authentication authentication) {
-        Instant now = Instant.now();
+    private final JwtEncoder jwtEncoder;
+    private final JwtAuthenticationConverter jwtAuthenticationConverter;
 
+    public JwtServices(JwtEncoder jwtEncoder,
+                       JwtAuthenticationConverter jwtAuthenticationConverter) {
+        this.jwtEncoder = jwtEncoder;
+        this.jwtAuthenticationConverter = jwtAuthenticationConverter;
+    }
+
+    public JwtAuthenticationConverter getJwtAuthenticationConverter() {
+        return jwtAuthenticationConverter;
+    }
+
+    public String generateJwt(Authentication authentication) {
+        UserDetailsWithId principal = (UserDetailsWithId) authentication.getPrincipal();
+
+        String role = authentication.getAuthorities()
+                .stream()
+                .findFirst()
+                .map(GrantedAuthority::getAuthority)
+                .orElseThrow()
+                .replace("ROLE_", ""); // prevent double prefix
+
+        String userId = principal.getId();
+        return generateJwt(authentication.getName(), role, userId);
+    }
+
+    public String generateJwt(String username, String role, String userId) {
+        Instant now = Instant.now();
         JwtClaimsSet claims = JwtClaimsSet.builder()
-            .subject(authentication.getName())
-            .issuedAt(now)
-            .expiresAt(now.plusSeconds(3600))
-            .claim("scope", "ROLE_USER")
-            .build();
+                .subject(username)
+                .issuedAt(now)
+                .expiresAt(now.plusSeconds(3600))
+                .claim("scope", List.of("ROLE_" + role))
+                .claim("userId", userId)
+                .build();
 
         JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();
-
-        return jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
+        return jwtEncoder.encode(JwtEncoderParameters.from(header, claims))
+                .getTokenValue();
     }
 }

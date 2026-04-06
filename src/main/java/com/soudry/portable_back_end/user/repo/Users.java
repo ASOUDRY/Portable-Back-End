@@ -1,7 +1,15 @@
 package com.soudry.portable_back_end.user.repo;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.uuid.Generators;
+import com.soudry.portable_back_end.auth.tokens.RefreshToken;
+import jakarta.persistence.CascadeType;
+import com.soudry.portable_back_end.user.AccountRole;
 
 @Entity
 public class Users {
@@ -11,11 +19,13 @@ public class Users {
     private String name;
     private String password;
     private String email;
-    private String role;
-
+    @Enumerated(EnumType.STRING)
+    private AccountRole role;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RefreshToken> refreshTokens = new ArrayList<>();
     public Users() { }
 
-    public Users(String name, String password, String role, String email) {
+    public Users(String name, String password, AccountRole role, String email) {
         id = Generators.randomBasedGenerator().generate().toString();
         this.name = name;
         this.password = password;
@@ -35,7 +45,7 @@ public class Users {
         return password;
     }
 
-    public String getRole() {
+    public AccountRole getRole() {
         return role;
     }
 
@@ -52,5 +62,9 @@ public class Users {
     }
       public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setRole(AccountRole role) {
+        this.role = role;
     }
 }

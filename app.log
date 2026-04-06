@@ -1,0 +1,142 @@
+2026-04-03T18:36:25.642-04:00 request: user:  INFO 1225 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : Starting Application using Java 25.0.1 with PID 1225 (/Users/asoudry/Desktop/Code Folder/AuthCore/target/classes started by asoudry in /Users/asoudry/Desktop/Code Folder/AuthCore)
+2026-04-03T18:36:25.644-04:00 request: user: DEBUG 1225 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-04-03T18:36:25.645-04:00 request: user:  INFO 1225 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : No active profile set, falling back to 1 default profile: "default"
+2026-04-03T18:36:26.415-04:00 request: user:  INFO 1225 --- [Module-Login] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-03T18:36:26.495-04:00 request: user:  INFO 1225 --- [Module-Login] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2026-04-03T18:36:27.230-04:00 request: user:  INFO 1225 --- [Module-Login] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-03T18:36:27.243-04:00 request: user:  INFO 1225 --- [Module-Login] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-03T18:36:27.244-04:00 request: user:  INFO 1225 --- [Module-Login] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-03T18:36:27.321-04:00 request: user:  INFO 1225 --- [Module-Login] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1630 ms
+2026-04-03T18:36:27.382-04:00 request: user: DEBUG 1225 --- [Module-Login] [main] c.s.p.logging.RequestIdFilter            : Filter 'requestIdFilter' configured for use
+2026-04-03T18:36:27.582-04:00 request: user:  INFO 1225 --- [Module-Login] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-03T18:36:27.638-04:00 request: user:  INFO 1225 --- [Module-Login] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-04-03T18:36:28.062-04:00 request: user:  INFO 1225 --- [Module-Login] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-03T18:36:28.094-04:00 request: user:  INFO 1225 --- [Module-Login] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-03T18:36:28.259-04:00 request: user:  INFO 1225 --- [Module-Login] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4604e051
+2026-04-03T18:36:28.260-04:00 request: user:  INFO 1225 --- [Module-Login] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-03T18:36:28.289-04:00 request: user:  WARN 1225 --- [Module-Login] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-03T18:36:28.310-04:00 request: user:  INFO 1225 --- [Module-Login] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/modular-repo]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: modular-repo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-03T18:36:29.128-04:00 request: user:  INFO 1225 --- [Module-Login] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-03T18:36:29.193-04:00 request: user:  INFO 1225 --- [Module-Login] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-03T18:36:29.519-04:00 request: user:  INFO 1225 --- [Module-Login] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-03T18:36:29.748-04:00 request: user:  INFO 1225 --- [Module-Login] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailService
+2026-04-03T18:36:30.211-04:00 request: user:  WARN 1225 --- [Module-Login] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-03T18:36:30.474-04:00 request: user:anonymous  INFO 1225 --- [Module-Login] [main] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT] JwtServices.getJwtAuthenticationConverter()
+2026-04-03T18:36:30.475-04:00 request: user:anonymous  INFO 1225 --- [Module-Login] [main] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT DONE] JwtServices.getJwtAuthenticationConverter() 1 ms
+2026-04-03T18:36:31.014-04:00 request: user:anonymous  INFO 1225 --- [Module-Login] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
+2026-04-03T18:36:31.020-04:00 request: user:anonymous  INFO 1225 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : Started Application in 5.832 seconds (process running for 6.247)
+2026-04-03T18:36:51.658-04:00 request: user:  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-03T18:36:51.658-04:00 request: user:  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-03T18:36:51.659-04:00 request: user:  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-03T18:36:51.779-04:00 request:e04935d1-005b-4d72-813a-8970780a25fc user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] c.s.p.logging.aspects.UserLoggingAspect  : [USER] UserController.register(..)
+2026-04-03T18:36:51.779-04:00 request:e04935d1-005b-4d72-813a-8970780a25fc user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] c.s.p.logging.aspects.UserLoggingAspect  : [USER] RegisterService.accountExists(..)
+2026-04-03T18:36:51.912-04:00 request:e04935d1-005b-4d72-813a-8970780a25fc user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] RegisterService.accountExists(..) 133 ms
+2026-04-03T18:36:51.912-04:00 request:e04935d1-005b-4d72-813a-8970780a25fc user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] c.s.p.logging.aspects.UserLoggingAspect  : [USER] RegisterService.register(..)
+2026-04-03T18:36:52.077-04:00 request:e04935d1-005b-4d72-813a-8970780a25fc user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] RegisterService.register(..) 165 ms
+2026-04-03T18:36:52.079-04:00 request:e04935d1-005b-4d72-813a-8970780a25fc user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-2] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] UserController.register(..) 300 ms
+2026-04-03T18:37:30.082-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.UserLoggingAspect  : [USER] UserController.login(..)
+2026-04-03T18:37:30.082-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] AuthServices.loginAndAuthenticate(..)
+2026-04-03T18:37:30.149-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] CustomUserDetailService.loadUserByUsername(..)
+2026-04-03T18:37:30.162-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] CustomUserDetailService.loadUserByUsername(..) 13 ms
+2026-04-03T18:37:30.224-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT] JwtServices.generateJwt(..)
+2026-04-03T18:37:30.269-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT DONE] JwtServices.generateJwt(..) 45 ms
+2026-04-03T18:37:30.272-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.generateRefreshToken(..)
+2026-04-03T18:37:30.350-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.generateRefreshToken(..) 78 ms
+2026-04-03T18:37:30.353-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] AuthServices.loginAndAuthenticate(..) 271 ms
+2026-04-03T18:37:30.353-04:00 request:22c68da5-4f8e-48cb-939b-5dfbc13d6568 user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-3] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] UserController.login(..) 271 ms
+2026-04-03T18:38:19.655-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.UserLoggingAspect  : [USER] UserController.refresh(..)
+2026-04-03T18:38:19.656-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] AuthServices.refreshAccessToken(..)
+2026-04-03T18:38:19.656-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.validate(..)
+2026-04-03T18:38:19.726-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.validate(..) 70 ms
+2026-04-03T18:38:19.726-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.deleteToken(..)
+2026-04-03T18:38:19.735-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.deleteToken(..) 9 ms
+2026-04-03T18:38:19.735-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.generateRefreshToken(..)
+2026-04-03T18:38:19.801-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.generateRefreshToken(..) 66 ms
+2026-04-03T18:38:19.801-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT] JwtServices.generateJwt(..)
+2026-04-03T18:38:19.802-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT DONE] JwtServices.generateJwt(..) 1 ms
+2026-04-03T18:38:19.802-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] AuthServices.refreshAccessToken(..) 146 ms
+2026-04-03T18:38:19.802-04:00 request:fd4b686d-ed69-49bf-9313-8c79fb49a4bb user:anonymous  INFO 1225 --- [Module-Login] [http-nio-8080-exec-4] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] UserController.refresh(..) 147 ms
+2026-04-03T18:39:37.396-04:00 request:4175aeed-83c4-439c-9585-3107b88f9557 user:Test123  INFO 1225 --- [Module-Login] [http-nio-8080-exec-7] c.s.p.logging.aspects.UserLoggingAspect  : [USER] PrivateControllers.updateUser(..)
+2026-04-03T18:39:37.408-04:00 request:4175aeed-83c4-439c-9585-3107b88f9557 user:Test123  INFO 1225 --- [Module-Login] [http-nio-8080-exec-7] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] PrivateControllers.updateUser(..) 12 ms
+2026-04-03T18:56:37.903-04:00 request: user:  INFO 1225 --- [Module-Login] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-03T18:56:37.913-04:00 request: user:  INFO 1225 --- [Module-Login] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-03T18:56:37.917-04:00 request: user:  INFO 1225 --- [Module-Login] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-03T18:56:37.919-04:00 request: user:  INFO 1225 --- [Module-Login] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-03T18:56:37.921-04:00 request: user:  INFO 1225 --- [Module-Login] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-03T18:58:55.471-04:00 request: user:  INFO 7653 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : Starting Application using Java 25.0.1 with PID 7653 (/Users/asoudry/Desktop/Code Folder/AuthCore/target/classes started by asoudry in /Users/asoudry/Desktop/Code Folder/AuthCore)
+2026-04-03T18:58:55.474-04:00 request: user: DEBUG 7653 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-04-03T18:58:55.475-04:00 request: user:  INFO 7653 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : No active profile set, falling back to 1 default profile: "default"
+2026-04-03T18:58:56.116-04:00 request: user:  INFO 7653 --- [Module-Login] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-03T18:58:56.178-04:00 request: user:  INFO 7653 --- [Module-Login] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2026-04-03T18:58:56.854-04:00 request: user:  INFO 7653 --- [Module-Login] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-03T18:58:56.866-04:00 request: user:  INFO 7653 --- [Module-Login] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-03T18:58:56.867-04:00 request: user:  INFO 7653 --- [Module-Login] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-03T18:58:56.910-04:00 request: user:  INFO 7653 --- [Module-Login] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1377 ms
+2026-04-03T18:58:56.968-04:00 request: user: DEBUG 7653 --- [Module-Login] [main] c.s.p.logging.RequestIdFilter            : Filter 'requestIdFilter' configured for use
+2026-04-03T18:58:57.142-04:00 request: user:  INFO 7653 --- [Module-Login] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-03T18:58:57.195-04:00 request: user:  INFO 7653 --- [Module-Login] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-04-03T18:58:57.595-04:00 request: user:  INFO 7653 --- [Module-Login] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-03T18:58:57.632-04:00 request: user:  INFO 7653 --- [Module-Login] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-03T18:58:57.790-04:00 request: user:  INFO 7653 --- [Module-Login] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7028b5cc
+2026-04-03T18:58:57.791-04:00 request: user:  INFO 7653 --- [Module-Login] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-03T18:58:57.821-04:00 request: user:  WARN 7653 --- [Module-Login] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-03T18:58:57.844-04:00 request: user:  INFO 7653 --- [Module-Login] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/modular-repo]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: modular-repo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-03T18:58:58.673-04:00 request: user:  INFO 7653 --- [Module-Login] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-03T18:58:58.754-04:00 request: user:  INFO 7653 --- [Module-Login] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-03T18:58:59.187-04:00 request: user:  INFO 7653 --- [Module-Login] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-03T18:58:59.403-04:00 request: user:  INFO 7653 --- [Module-Login] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailService
+2026-04-03T18:58:59.836-04:00 request: user:  WARN 7653 --- [Module-Login] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-03T18:59:00.078-04:00 request: user:anonymous  INFO 7653 --- [Module-Login] [main] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT] JwtServices.getJwtAuthenticationConverter()
+2026-04-03T18:59:00.078-04:00 request: user:anonymous  INFO 7653 --- [Module-Login] [main] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT DONE] JwtServices.getJwtAuthenticationConverter() 0 ms
+2026-04-03T18:59:00.622-04:00 request: user:anonymous  INFO 7653 --- [Module-Login] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
+2026-04-03T18:59:00.628-04:00 request: user:anonymous  INFO 7653 --- [Module-Login] [main] c.soudry.portable_back_end.Application   : Started Application in 5.584 seconds (process running for 5.97)
+2026-04-03T19:00:43.324-04:00 request: user:  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-03T19:00:43.325-04:00 request: user:  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-03T19:00:43.327-04:00 request: user:  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-03T19:00:43.493-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.UserLoggingAspect  : [USER] PrivateControllers.logout(..)
+2026-04-03T19:00:43.493-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] AuthServices.logOut(..)
+2026-04-03T19:00:43.493-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.validate(..)
+2026-04-03T19:00:43.652-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.validate(..) 159 ms
+2026-04-03T19:00:43.653-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.deleteToken(..)
+2026-04-03T19:00:43.687-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.deleteToken(..) 34 ms
+2026-04-03T19:00:43.687-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] AuthServices.logOut(..) 194 ms
+2026-04-03T19:00:43.688-04:00 request:6c6be252-a541-4774-887d-76844865ef7a user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-1] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] PrivateControllers.logout(..) 195 ms
+2026-04-03T19:02:39.470-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.UserLoggingAspect  : [USER] UserController.login(..)
+2026-04-03T19:02:39.470-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] AuthServices.loginAndAuthenticate(..)
+2026-04-03T19:02:39.534-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] CustomUserDetailService.loadUserByUsername(..)
+2026-04-03T19:02:39.632-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] CustomUserDetailService.loadUserByUsername(..) 98 ms
+2026-04-03T19:02:39.699-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT] JwtServices.generateJwt(..)
+2026-04-03T19:02:39.709-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.JwtLoggingAspect   : [JWT DONE] JwtServices.generateJwt(..) 10 ms
+2026-04-03T19:02:39.712-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH] RefreshTokenService.generateRefreshToken(..)
+2026-04-03T19:02:39.790-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] RefreshTokenService.generateRefreshToken(..) 78 ms
+2026-04-03T19:02:39.793-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.AuthLoggingAspect  : [AUTH DONE] AuthServices.loginAndAuthenticate(..) 323 ms
+2026-04-03T19:02:39.794-04:00 request:0eb4b80a-ffe3-4e3a-8e11-b48248f17e3b user:anonymous  INFO 7653 --- [Module-Login] [http-nio-8080-exec-5] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] UserController.login(..) 324 ms
+2026-04-03T19:03:07.213-04:00 request:97ac7a4f-1997-4c18-b736-8fe877a7dcae user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-6] c.s.p.logging.aspects.UserLoggingAspect  : [USER] PrivateControllers.deleteUser(..)
+2026-04-03T19:03:07.266-04:00 request:97ac7a4f-1997-4c18-b736-8fe877a7dcae user:Test123  INFO 7653 --- [Module-Login] [http-nio-8080-exec-6] c.s.p.logging.aspects.UserLoggingAspect  : [USER DONE] PrivateControllers.deleteUser(..) 53 ms
+2026-04-03T19:03:25.351-04:00 request: user:  INFO 7653 --- [Module-Login] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-03T19:03:25.361-04:00 request: user:  INFO 7653 --- [Module-Login] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-03T19:03:25.365-04:00 request: user:  INFO 7653 --- [Module-Login] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-03T19:03:25.367-04:00 request: user:  INFO 7653 --- [Module-Login] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-03T19:03:25.369-04:00 request: user:  INFO 7653 --- [Module-Login] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
