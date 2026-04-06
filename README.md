@@ -3,13 +3,9 @@
 AuthCore is a modular Spring Boot backend built around secure, stateless authentication.  
 It provides a reusable auth foundation for other applications using JWT access tokens and hashed, database-backed refresh tokens.
 
-The goal is simple: keep authentication stateless at the request layer, keep refresh tokens revocable at the database layer, and keep the design clean enough to plug into larger systems later.
-
 ---
 
-## Why AuthCore
-
-Many small backend projects start with authentication logic scattered across controllers, filters, and services. That works at first, but it gets messy fast.
+## What AuthCore provides
 
 AuthCore isolates the auth layer into a reusable backend core with:
 
@@ -17,7 +13,7 @@ AuthCore isolates the auth layer into a reusable backend core with:
 - database-backed refresh token persistence
 - hashed refresh token storage
 - token rotation on refresh
-- explicit token revocation on logout
+- explicit token deletion on logout
 - a structure that can grow into a larger modular architecture
 
 ---
@@ -169,38 +165,34 @@ These require both authentication and the correct role or authority.
 
 ## Example Endpoints
 
-> Exact request and response bodies depend on your DTOs and controller implementations.
+> Some of the potential endpoints of the api. 
 
-### Register
-`POST /api/public/register`
+### Public
+- `POST /api/public/register`  
+  Create a new user account.
 
-Creates a new user account.
+- `POST /api/public/login`  
+  Authenticate a user and return an access token plus a refresh token.
 
-### Login
-`POST /api/public/login`
+- `POST /api/public/refresh`  
+  Exchange a valid refresh token for a new access token and rotated refresh token.
 
-Validates user credentials and returns:
-- access token
-- refresh token
+### Private
+- `PATCH /api/private/updateUser`  
+  Update the authenticated user's account details.
 
-### Refresh
-`POST /api/public/refresh`
+- `DELETE /api/private/logoutUser`  
+  Log out the authenticated user by deleting the submitted refresh token.
 
-Accepts a refresh token and, if valid, returns:
-- a new access token
-- a rotated refresh token
+### Admin
+- `GET /api/admin/getAllUsers`  
+  Retrieve all users.
 
-### Logout
-`POST /api/public/logout`  
-or  
-`POST /api/private/logout`
+- `PATCH /api/admin/adminPromotion/{id}`  
+  Promote a user to admin.
 
-Deletes the stored refresh token so it cannot be reused.
-
-### Current User / Protected Resource
-`GET /api/private/**`
-
-Requires a valid JWT in the `Authorization` header.
+- `DELETE /api/admin/deleteUser/{id}`  
+  Delete a user by id.
 
 ---
 
